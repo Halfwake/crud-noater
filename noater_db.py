@@ -1,9 +1,5 @@
 import pymongo
 
-client = pymongo.MongoClient()
-db = self.client.['noater-db']
-collection = self.db['noats']
-
 def build_crud(host, port, db_name, collection_name):
   client = pymongo.MongoClient(host, port)
   collection = client[db_name][collection_name]
