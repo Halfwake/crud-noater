@@ -2,6 +2,8 @@
 
 import noater_db
 
+import json
+
 from flask import Flask, jsonify
 
 def verify_names(json):
@@ -25,7 +27,7 @@ def verify_noats(json):
     return True
 
 def build_api(db_create, db_read, db_update, db_delete):
-  invalid_data_message = jsonify({'error' : 'invalid data'})
+  invalid_data_message = json.dumps({'error' : 'invalid data'})
   invalid_data_response = (invalid_data_message, 400)
   def post(json):
     if self.verify_noats(json):
