@@ -20,7 +20,7 @@ def verify_noats(json):
   if not isinstance(json, list):
     return False
   for json_hash in json:
-    if not set(json_hash.keys()) == set(['name', 'content']):
+    if not set(json_hash.keys()) == set(['name', 'text']):
       return False
     if not all(lambda v : isinstance(v, str)):
       return False
