@@ -6,14 +6,14 @@ def build_crud(host, port, db_name, collection_name):
 
   def create(data):
     for name, noat in data.items():
-      collection.update({'name' : name}, {'$set' : noat}, upset = True)
+      collection.update({'name' : name}, {'$set' : {'text' : noat}}, upset = True)
 
   def read(data):
     return [collection.find_one({'name' : name }) for name in data]
 
   def update(data):
     for name, noat in data.items():
-      collection.update({'name' : name}, {'$set' : noat}, upsert = False)
+      collection.update({'name' : name}, {'$set' : {'text' : noat}}, upsert = False)
 
   def delete(data):
     for name in data:
