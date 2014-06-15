@@ -19,5 +19,7 @@ def build_crud(host, port, db_name, collection_name):
     for name in data:
       collection.remove ({'name' : name})
 
-  return create, read, update, delete
+  close = lambda : client.close()
+
+  return (create, read, update, delete), close
 
