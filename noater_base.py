@@ -17,7 +17,7 @@ def verify_names(json):
 
 def verify_noats(json):
   'Verify that the noats JSON is valid.'
-  if not isinstance(json, hash):
+  if not isinstance(json, list):
     return False
   for json_hash in json:
     if not set(json_hash.keys()) == set(['name', 'content']):
