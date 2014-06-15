@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
   app = Flask(__name__)
 
-  db_crud, db_close = noater_db.make_crud('localhost', 27017, 'noater-db', 'noats')
+  db_crud, db_close = noater_db.build_crud('localhost', 27017, 'noater-db', 'noats')
   post, get, put, delete = build_api(*crud)
 
   @app.route('/api/v0.1/create', methods = ['POST'])
