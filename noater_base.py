@@ -2,9 +2,6 @@ import noater_db
 
 from flask import Flask, jsonify
 
-
-#400 bad request
-
 def verify_names(json):
   'Verify that the names JSON is valid.'
   if not isinstance(json, list):
@@ -38,7 +35,7 @@ def build_api(db_create, db_read, db_update, db_delete):
   def get(json):
     if verify_names(json):
       result = db_read(json) 
-      return json.dumps(result), ''
+      return jsonify(result), ''
     else:
       return invalid_data_response
 
