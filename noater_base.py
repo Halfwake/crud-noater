@@ -69,15 +69,15 @@ if __name__ == '__main__':
   def create_noat():
     return post(request.json)
 
-  @app.route('/api/v0.1/read', methods = ['GET']
+  @app.route('/api/v0.1/read', methods = ['GET'])
   def get_handler():
     return get(request.json)
 
-  @app.route('/api/v0.1/update', methods = ['PUT']
+  @app.route('/api/v0.1/update', methods = ['PUT'])
   def put_handler():
     return put(request.json)
 
-  @app.route('/api/v0.1/delete', methods = ['DELETE']
+  @app.route('/api/v0.1/delete', methods = ['DELETE'])
   def delete_handler():
     return delete(request.json)
 
