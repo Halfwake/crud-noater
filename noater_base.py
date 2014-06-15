@@ -1,3 +1,5 @@
+#!/usr/bin/env python 
+
 import noater_db
 
 from flask import Flask, jsonify
